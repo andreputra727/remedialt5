@@ -1,0 +1,26 @@
+package mains;
+import java.util.Scanner;
+import shapes.Balok;
+import shapes.Kerucut;
+
+public class KalkulatorBangunRuangMini {
+    public static void main(String[] args) {
+     Scanner scn = new Scanner(System.in);
+     System.out.println("=========================================");
+     System.out.println("Kalkulator Bangun Ruang Mini Versi A");
+     System.out.println("Andre Syaputra Siregar");
+     System.out.println("245150707111045");
+     System.out.println("=========================================");
+    
+    Kerucut kerucut = new Kerucut();
+    kerucut.printInfo();
+     
+     
+     Balok balok = new Balok();
+     balok.printInfo();
+     
+     
+     
+    }
+    
+}
