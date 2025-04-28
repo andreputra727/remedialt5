@@ -1,0 +1,43 @@
+package bases;
+
+public abstract class BangunRuang {
+    private String nama;
+    private double tinggi;
+    private double massa;
+    
+    public BangunRuang(){
+    
+    }
+
+    public void setNama(String inputNama){ 
+        this.nama = inputNama;
+    }
+    
+    public String getNama(){
+        return nama;
+    }
+    
+    public void setTinggi(double inputTinggi){
+        this.tinggi = inputTinggi;
+    }
+    
+    public double getTinggi(){
+        return tinggi;
+    }
+    
+    public void setMassa(double inputMassa){
+        this.massa = inputMassa;
+    }
+    
+    public double getMassa(){
+        return massa;
+    }
+    
+    public abstract void printInfo();
+    
+    
+    
+    
+    
+    
+}
