@@ -1,0 +1,7 @@
+package interfaces;
+
+public interface MemilikiBerat{
+    double g = 9.8;
+    
+    double hitungBerat();
+}
