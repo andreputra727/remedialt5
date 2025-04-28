@@ -1,0 +1,67 @@
+package shapes;
+
+import bases.BangunRuang;
+import interfaces.MemilikiBerat;
+import java.util.Scanner;
+
+public class Balok extends BangunRuang implements MemilikiBerat {
+    Scanner scn = new Scanner(System.in);
+    
+    private double panjang;
+    private double lebar;
+    
+    public Balok(){
+    
+    }
+    
+    public Balok(double panjang, double lebar){
+    this.panjang = panjang;
+    this.lebar = lebar;
+    }
+    
+    public double getPanjang(){
+        return panjang;
+    }
+    
+    public double getLebar(){
+        return lebar;
+    }
+   
+    public double hitungVolume(){
+        return panjang * lebar * getTinggi();
+    }
+    
+    @Override
+    public double hitungBerat(){
+        return getMassa() * g;
+    }
+    
+    @Override
+    public void printInfo(){
+        System.out.println("=========================================");
+        System.out.println("Balok");
+        System.out.println("=========================================");
+        System.out.printf("%-16s : ", "Isikan nama");
+        setNama(scn.nextLine());
+        System.out.printf("%-16s : ", "Isikan panjang");
+        panjang = scn.nextDouble();
+        System.out.printf("%-16s : ", "Isikan lebar");
+        lebar = scn.nextDouble(); 
+        System.out.printf("%-16s : ", "Isikan tinggi");
+        setTinggi(scn.nextDouble()); 
+        System.out.printf("%-16s : ", "Isikan massa");
+        setMassa(scn.nextDouble());
+        System.out.println("==========================================");
+        System.out.printf("%-16s : %s%n", "Nama", getNama());
+        System.out.printf("%-16s : %.2f%n", "Panjang", panjang);
+        System.out.printf("%-16s : %.2f%n", "Lebar", lebar);
+        System.out.printf("%-16s : %.2f%n", "Tinggi", getTinggi());
+        System.out.printf("%-16s : %.2f%n", "Massa", getMassa());
+        System.out.printf("%-16s : %.2f%n", "Volume", hitungVolume());
+        System.out.printf("%-16s : %.2f%n", "Berat", hitungBerat());
+        System.out.println("==========================================");
+        
+    }
+}
+
+
