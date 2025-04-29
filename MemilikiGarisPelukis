@@ -1,6 +1,9 @@
 package interfaces;
 
-public interface MemilikiGarisPelukis{
-   
+// Interface yang menyatakan bahwa suatu bangun ruang memiliki garis pelukis
+public interface MemilikiGarisPelukis {
+    
+    // Metode abstrak untuk menghitung panjang garis pelukis
+    // Harus diimplementasikan oleh kelas yang mengimplementasikan interface ini
     double hitungGarisPelukis();
 }
