@@ -1,6 +1,9 @@
 package interfaces;
 
-public interface MemilikiVolume{
-   double hitungVolume();
-
+// Interface yang menyatakan bahwa suatu bangun ruang dapat menghitung volumenya
+public interface MemilikiVolume {
+    
+    // Metode abstrak untuk menghitung volume
+    // Harus diimplementasikan oleh kelas yang mengimplementasikan interface ini
+    double hitungVolume();
 }
