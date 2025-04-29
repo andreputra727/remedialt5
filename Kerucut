@@ -1,60 +1,81 @@
 package shapes;
-import bases.BangunRuang;
-import interfaces.MemilikiGarisPelukis;
-import interfaces.MemilikiVolume;
-import java.util.Scanner;
 
-public class Kerucut extends BangunRuang implements MemilikiGarisPelukis, MemilikiVolume{
+// Mengimpor superclass dan interface yang diperlukan
+import bases.BangunRuang;                      // Superclass abstrak BangunRuang
+import interfaces.MemilikiGarisPelukis;       // Interface untuk menghitung garis pelukis
+import interfaces.MemilikiVolume;             // Interface untuk menghitung volume
+import java.util.Scanner;                     // Untuk input dari pengguna
 
+// Kelas Kerucut merupakan subclass dari BangunRuang dan mengimplementasikan dua interface
+public class Kerucut extends BangunRuang implements MemilikiGarisPelukis, MemilikiVolume {
+
+    // Properti radius (jari-jari alas) kerucut
     private double radius;
+
+    // Konstanta π dalam bentuk pecahan 22/7
     private int PI_PEMBILANG = 22;
     private int PI_PENYEBUT = 7;
+
+    // Konstanta gravitasi
     private static final double g = 9.8;
+
+    // Scanner untuk input dari pengguna
     Scanner scn = new Scanner(System.in);
     
-    public Kerucut (){
-    
+    // Konstruktor default
+    public Kerucut () {
     }
-    
+
+    // Konstruktor dengan parameter radius
     public Kerucut (double radius){
         this.radius = radius;
     }
-    
+
+    // Getter untuk radius
     public double getRadius(){
         return radius;
     }
-    
+
+    // Metode untuk menghitung berat = massa × gravitasi
     public double hitungBerat(){
-        return getMassa()* g;
+        return getMassa() * g;
     }
-    
-   
+
+    // Implementasi dari interface MemilikiVolume
+    // Volume kerucut = (1/3) × π × r² × t
     public double hitungVolume(){
-    return Math.pow(radius, 2)* getTinggi() * (1.0/3.0) * (PI_PEMBILANG/PI_PENYEBUT);
+        return Math.pow(radius, 2) * getTinggi() * (1.0 / 3.0) * ((double)PI_PEMBILANG / PI_PENYEBUT);
     }
-    
+
+    // Implementasi dari interface MemilikiGarisPelukis
+    // Garis pelukis = √(r² + t²)
     public double hitungGarisPelukis(){
-        return Math.sqrt(Math.pow(radius, 2)+ Math.pow(getTinggi(),2));
+        return Math.sqrt(Math.pow(radius, 2) + Math.pow(getTinggi(), 2));
     }
-    
-    
+
+    // Override dari metode abstrak printInfo di BangunRuang
+    // Digunakan untuk input data dan menampilkan hasil perhitungan
     @Override
     public void printInfo(){
-        
         System.out.println("Kerucut");
         System.out.println("=========================================");
-    
+
+        // Input dari user
         System.out.printf("%-16s : ", "Isikan nama");
         setNama(scn.nextLine());
+
         System.out.printf("%-16s : ", "Isikan radius");
         radius = scn.nextDouble(); 
+
         System.out.printf("%-16s : ", "Isikan tinggi");
         setTinggi(scn.nextDouble()); 
+
         System.out.printf("%-16s : ", "Isikan massa");
         setMassa(scn.nextDouble());
+
         System.out.println("=========================================");
-        
-        
+
+        // Output hasil perhitungan
         System.out.printf("%-16s : %s%n", "Nama", getNama());
         System.out.printf("%-16s : %.2f%n", "Radius", radius);
         System.out.printf("%-16s : %.2f%n", "Tinggi", getTinggi());
@@ -62,10 +83,5 @@ public class Kerucut extends BangunRuang implements MemilikiGarisPelukis, Memili
         System.out.printf("%-16s : %.2f%n", "Volume", hitungVolume());
         System.out.printf("%-16s : %.2f%n", "Berat", hitungBerat());
         System.out.printf("%-16s : %.2f%n", "Garis Pelukis", hitungGarisPelukis());
-        
-        
     }
-
-
 }
-
