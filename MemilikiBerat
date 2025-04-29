@@ -1,7 +1,10 @@
 package interfaces;
 
-public interface MemilikiBerat{
+// Interface yang mendefinisikan kemampuan untuk menghitung berat suatu objek
+public interface MemilikiBerat {
+    // Konstanta gravitasi (dalam m/s^2), secara default bersifat public static final
     double g = 9.8;
     
+    // Metode abstrak untuk menghitung berat; harus diimplementasikan oleh kelas yang mengimplementasi interface ini
     double hitungBerat();
 }
