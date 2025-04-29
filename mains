@@ -1,26 +1,29 @@
 package mains;
+
+// Mengimpor kelas-kelas bentuk bangun ruang yang digunakan
 import java.util.Scanner;
 import shapes.Balok;
 import shapes.Kerucut;
 
+// Kelas utama untuk menjalankan program kalkulator bangun ruang
 public class KalkulatorBangunRuangMini {
     public static void main(String[] args) {
-     Scanner scn = new Scanner(System.in);
-     System.out.println("=========================================");
-     System.out.println("Kalkulator Bangun Ruang Mini Versi A");
-     System.out.println("Andre Syaputra Siregar");
-     System.out.println("245150707111045");
-     System.out.println("=========================================");
-    
-    Kerucut kerucut = new Kerucut();
-    kerucut.printInfo();
-     
-     
-     Balok balok = new Balok();
-     balok.printInfo();
-     
-     
-     
+        // Membuat objek Scanner untuk input dari pengguna
+        Scanner scn = new Scanner(System.in);
+
+        // Menampilkan judul program dan informasi pembuat
+        System.out.println("=========================================");
+        System.out.println("Kalkulator Bangun Ruang Mini Versi A");
+        System.out.println("Andre Syaputra Siregar");
+        System.out.println("245150707111045");
+        System.out.println("=========================================");
+
+        // Membuat dan menampilkan informasi dari objek kerucut
+        Kerucut kerucut = new Kerucut();
+        kerucut.printInfo();
+
+        // Membuat dan menampilkan informasi dari objek balok
+        Balok balok = new Balok();
+        balok.printInfo();
     }
-    
 }
