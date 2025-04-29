@@ -1,56 +1,78 @@
 package shapes;
 
-import bases.BangunRuang;
-import interfaces.MemilikiBerat;
-import java.util.Scanner;
+// Mengimpor kelas dan interface yang diperlukan
+import bases.BangunRuang;                // Kelas abstrak induk untuk bangun ruang
+import interfaces.MemilikiBerat;        // Interface untuk menghitung berat
+import java.util.Scanner;               // Untuk input dari pengguna
 
+// Kelas Balok merupakan turunan dari BangunRuang dan mengimplementasikan MemilikiBerat
 public class Balok extends BangunRuang implements MemilikiBerat {
+    
+    // Scanner untuk membaca input dari pengguna
     Scanner scn = new Scanner(System.in);
     
+    // Properti khusus milik Balok selain tinggi dan massa dari superclass
     private double panjang;
     private double lebar;
     
+    // Konstruktor default
     public Balok(){
     
     }
     
+    // Konstruktor dengan parameter panjang dan lebar
     public Balok(double panjang, double lebar){
-    this.panjang = panjang;
-    this.lebar = lebar;
+        this.panjang = panjang;
+        this.lebar = lebar;
     }
     
+    // Getter untuk panjang
     public double getPanjang(){
         return panjang;
     }
     
+    // Getter untuk lebar
     public double getLebar(){
         return lebar;
     }
-   
+    
+    // Metode untuk menghitung volume balok (panjang × lebar × tinggi)
     public double hitungVolume(){
         return panjang * lebar * getTinggi();
     }
     
+    // Override dari metode interface MemilikiBerat
+    // Berat = massa × gravitasi
     @Override
     public double hitungBerat(){
         return getMassa() * g;
     }
     
+    // Override dari metode abstrak di BangunRuang
+    // Mencetak dan menerima informasi balok dari pengguna
     @Override
     public void printInfo(){
         System.out.println("=========================================");
         System.out.println("Balok");
         System.out.println("=========================================");
+
+        // Input dari user
         System.out.printf("%-16s : ", "Isikan nama");
         setNama(scn.nextLine());
+
         System.out.printf("%-16s : ", "Isikan panjang");
         panjang = scn.nextDouble();
+
         System.out.printf("%-16s : ", "Isikan lebar");
         lebar = scn.nextDouble(); 
+
         System.out.printf("%-16s : ", "Isikan tinggi");
         setTinggi(scn.nextDouble()); 
+
         System.out.printf("%-16s : ", "Isikan massa");
         setMassa(scn.nextDouble());
+
+        // Output hasil perhitungan dan informasi
         System.out.println("==========================================");
         System.out.printf("%-16s : %s%n", "Nama", getNama());
         System.out.printf("%-16s : %.2f%n", "Panjang", panjang);
@@ -60,8 +82,5 @@ public class Balok extends BangunRuang implements MemilikiBerat {
         System.out.printf("%-16s : %.2f%n", "Volume", hitungVolume());
         System.out.printf("%-16s : %.2f%n", "Berat", hitungBerat());
         System.out.println("==========================================");
-        
     }
 }
-
-
