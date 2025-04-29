@@ -1,43 +1,48 @@
 package bases;
 
+// Kelas abstrak BangunRuang yang menjadi dasar (superclass) bagi semua bangun ruang lainnya
 public abstract class BangunRuang {
+    // Properti privat: nama bangun, tinggi, dan massa
     private String nama;
     private double tinggi;
     private double massa;
     
+    // Konstruktor default tanpa parameter
     public BangunRuang(){
     
     }
 
+    // Setter untuk properti nama
     public void setNama(String inputNama){ 
         this.nama = inputNama;
     }
     
+    // Getter untuk properti nama
     public String getNama(){
         return nama;
     }
     
+    // Setter untuk properti tinggi
     public void setTinggi(double inputTinggi){
         this.tinggi = inputTinggi;
     }
     
+    // Getter untuk properti tinggi
     public double getTinggi(){
         return tinggi;
     }
     
+    // Setter untuk properti massa
     public void setMassa(double inputMassa){
         this.massa = inputMassa;
     }
     
+    // Getter untuk properti massa
     public double getMassa(){
         return massa;
     }
     
+    // Metode abstrak yang harus diimplementasikan oleh subclass
+    // Biasanya digunakan untuk mencetak informasi bangun ruang secara spesifik
     public abstract void printInfo();
-    
-    
-    
-    
-    
-    
 }
